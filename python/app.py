@@ -189,12 +189,12 @@ def get_files_for_architecture(architecture):
     if architecture == 'arm':
         base_files = [
             {"fileName": "web", "fileUrl": "https://arm64.ssss.nyc.mn/sb"},
-            {"fileName": "bot", "fileUrl": "https://arm64.ssss.nyc.mn/2go"}
+            {"fileName": "bot", "fileUrl": "https://arm64.ssss.nyc.mn/bot"}
         ]
     else:
         base_files = [
             {"fileName": "web", "fileUrl": "https://amd64.ssss.nyc.mn/sb"},
-            {"fileName": "bot", "fileUrl": "https://amd64.ssss.nyc.mn/2go"}
+            {"fileName": "bot", "fileUrl": "https://amd64.ssss.nyc.mn/bot"}
         ]
 
     if NEZHA_SERVER and NEZHA_KEY:
@@ -294,7 +294,7 @@ async def download_files_and_run():
     # Check TLS
     port = NEZHA_SERVER.split(":")[-1] if ":" in NEZHA_SERVER else ""
     if port in ["443", "8443", "2096", "2087", "2083", "2053"]:
-        nezha_tls = "tls"
+        nezha_tls = "true"
     else:
         nezha_tls = "false"
 
